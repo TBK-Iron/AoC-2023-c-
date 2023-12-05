@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 public class Day5_2 {
 
     public static List<Range> MinimizeRanges(List<Range> ranges){
@@ -23,38 +25,31 @@ public class Day5_2 {
         return result;
     }
 
-    public static List<Range> FindGaps(Range superRange, List<Range> ranges)
-{
-    // Sort the list of ranges
-    ranges.Sort();
+    public static List<Range> FindGaps(Range superRange, List<Range> ranges){
+        ranges.Sort();
 
-    List<Range> gaps = new List<Range>();
-    double previousEnd = superRange.getStart();
+        List<Range> gaps = new List<Range>();
+        double previousEnd = superRange.getStart();
 
-    foreach (var range in ranges)
-    {
-        // Check if there is a gap
-        if (previousEnd < range.getStart())
-        {
-            // Add the gap to the list
-            gaps.Add(new Range(previousEnd, range.getStart()));
+        foreach (var range in ranges) {
+            if (previousEnd < range.getStart()) {
+               
+                gaps.Add(new Range(previousEnd, range.getStart()));
+            }
+            previousEnd = Math.Max(previousEnd, range.getEnd());
         }
-        previousEnd = Math.Max(previousEnd, range.getEnd());
-    }
 
-    // Check for a gap at the end of the super range
-    if (previousEnd < superRange.getEnd())
-    {
-        gaps.Add(new Range(previousEnd, superRange.getEnd()));
-    }
+        if (previousEnd < superRange.getEnd()) {
+            gaps.Add(new Range(previousEnd, superRange.getEnd()));
+        }
 
-    return gaps;
-}
+        return gaps;
+    }
 
     public static void Run(){
 
-        
-
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
 
         string[] lines = File.ReadAllLines(@"../../../src/input5.txt");
 
@@ -87,13 +82,11 @@ public class Day5_2 {
             }
         }
 
-        
-
         List<Range> currentRanges = seedRanges;
 
         for(int i = 0; i < maps.Count; i++){
             currentRanges = MinimizeRanges(currentRanges);
-            Console.WriteLine(String.Join(", ", currentRanges));
+            //Console.WriteLine($"map {i}: {String.Join(", ", currentRanges)}");
             List<Range> newRanges = new List<Range>();
             foreach(Range range in currentRanges){
                 List<Range> intersections = new List<Range>();
@@ -111,7 +104,10 @@ public class Day5_2 {
             currentRanges = newRanges;
         }
         currentRanges.Sort();
-        Console.WriteLine(currentRanges[0].getStart());
+
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
+        Console.WriteLine($"Result: {currentRanges[0].getStart()}");
 
     }
 

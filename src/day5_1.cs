@@ -1,5 +1,10 @@
+using System.Diagnostics;
+
 public class Day5_1 {
     public static void Run(){
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+
         string[] lines = File.ReadAllLines(@"../../../src/input5.txt");
 
         Double[] seeds = lines[0].Split(": ")[1].Split(" ").Select(Double.Parse).ToArray();
@@ -32,9 +37,9 @@ public class Day5_1 {
         foreach(Double seed in seeds){
             Double currentValue = seed;
             for(int i = 0; i < maps.Count; i++){
-                Console.WriteLine("seed " + seed + ": " + currentValue);
+                //Console.WriteLine("seed " + seed + ": " + currentValue);
                 for(int j = 0; j < maps[i].Count; j++){
-                    Console.WriteLine(i + " Range " + j + " Contains " + currentValue + " = " + maps[i][j].Contains(currentValue));
+                    //Console.WriteLine(i + " Range " + j + " Contains " + currentValue + " = " + maps[i][j].Contains(currentValue));
                     if(maps[i][j].Contains(currentValue)){
                         currentValue = maps[i][j].GetMappedValue(currentValue);
                         break;
@@ -42,11 +47,13 @@ public class Day5_1 {
                 }
                 
             }
-            Console.WriteLine(currentValue);
+            //Console.WriteLine(currentValue);
             minLocationVal = Math.Min(minLocationVal, currentValue);
         }
 
-        Console.WriteLine(minLocationVal);
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
+        Console.WriteLine($"Result: {minLocationVal}");
 
     }
 
