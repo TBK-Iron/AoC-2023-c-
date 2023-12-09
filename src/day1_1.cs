@@ -4,7 +4,7 @@ using System.IO;
 
 public class Day1_1 {
     public static void Run(){
-        string[] lines = File.ReadAllLines(@"../../../src/input1.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input1.txt");
 
         List<char> numbers = new List<char>();
 

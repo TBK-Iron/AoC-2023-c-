@@ -5,7 +5,7 @@ public class Day5_1 {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        string[] lines = File.ReadAllLines(@"../../../src/input5.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input5.txt");
 
         Double[] seeds = lines[0].Split(": ")[1].Split(" ").Select(Double.Parse).ToArray();
 

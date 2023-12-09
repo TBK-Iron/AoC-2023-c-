@@ -51,7 +51,7 @@ public class Day5_2 {
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        string[] lines = File.ReadAllLines(@"../../../src/input5.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input5.txt");
 
         Double[] seedValues = lines[0].Split(": ")[1].Split(" ").Select(Double.Parse).ToArray();
         List<Range> seedRanges = new List<Range>();
@@ -91,7 +91,7 @@ public class Day5_2 {
             foreach(Range range in currentRanges){
                 List<Range> intersections = new List<Range>();
                 for(int j = 0; j < maps[i].Count; j++){
-                    Range intersection = maps[i][j].intersection(range);
+                    Range intersection = maps[i][j].Intersection(range);
                     if(intersection != null){
                         intersections.Add(intersection);
                         newRanges.Add(maps[i][j].OffsetRange(intersection));
@@ -166,7 +166,7 @@ public class Day5_2 {
             }
         }
 
-        public Range intersection(Range range2){
+        public Range Intersection(Range range2){
             Double newStart = Math.Max(this.start, range2.start);
             Double newEnd = Math.Min(this.end, range2.end);
             if(newStart <= newEnd){

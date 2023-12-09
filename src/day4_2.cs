@@ -1,6 +1,6 @@
 public class Day4_2 {
     public static void Run(){
-        string[] lines = File.ReadAllLines(@"../../../src/input4.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input4.txt");
 
         int[] multipliers = new int[lines.Length];
 

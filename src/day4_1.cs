@@ -1,6 +1,6 @@
 public class Day4_1 {
     public static void Run(){
-        string[] lines = File.ReadAllLines(@"../../../src/input4.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input4.txt");
 
         int totalPoints = 0;
 

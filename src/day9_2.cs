@@ -10,7 +10,7 @@ class Day9_2 {
         return true;
     }
     public static void Run(){
-        long[][] histories = File.ReadAllLines(@"../../../src/input9.txt").Select(line => line.Split(" ").Select(long.Parse).ToArray()).ToArray();
+        long[][] histories = File.ReadAllLines(@"../../../src/inputs/input9.txt").Select(line => line.Split(" ").Select(long.Parse).ToArray()).ToArray();
 
         long sum = 0;
 

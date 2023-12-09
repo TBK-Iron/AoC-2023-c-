@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 class Day7_1 {
     public static void Run(){
 
-        string[] lines = File.ReadAllLines(@"../../../src/input7.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input7.txt");
 
         List<KeyValuePair<string, int>> gameBids = new List<KeyValuePair<string, int>>();
 

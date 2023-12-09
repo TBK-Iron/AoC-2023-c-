@@ -14,7 +14,7 @@ public class Day2_1 {
         };
 
 
-        string[] lines = File.ReadAllLines(@"../../../src/input2.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input2.txt");
 
         int sum = 0;
 

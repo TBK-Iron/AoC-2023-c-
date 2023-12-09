@@ -16,7 +16,7 @@ class Day8_2 {
     }
 
     public static void Run(){
-        string[] lines = File.ReadAllLines(@"../../../src/input8.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input8.txt");
 
         char[] instructions = lines[0].ToCharArray();
         Dictionary<string, Pair> mappings = new Dictionary<string, Pair>();

@@ -8,7 +8,7 @@ public class Day2_2 {
     public static void Run(){
 
 
-        string[] lines = File.ReadAllLines(@"../../../src/input2.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input2.txt");
 
         int powerSum = 0;
 

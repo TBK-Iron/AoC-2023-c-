@@ -28,7 +28,7 @@ public class Day3_2 {
 
     public static void Run(){
 
-        string[] lines = File.ReadAllLines(@"../../../src/input3.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input3.txt");
 
         char[,] engineMap = new char[lines[0].Length, lines.Length];
 

@@ -1,6 +1,6 @@
 class Day6_1 {
     public static void Run(){
-        string[] lines = File.ReadAllLines(@"../../../src/input6.txt");
+        string[] lines = File.ReadAllLines(@"../../../src/inputs/input6.txt");
 
         
 
