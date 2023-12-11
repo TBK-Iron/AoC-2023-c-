@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VrlghGBPoNBhZkw0uwEqx5f59W69wc4xx4Vm3GuWYxD33UURc8aj2XT39rEeNiIBeX6xWQdcy4syxeTgazf6jg==",
+  "dgSpecHash": "Z9/Dde2aTPHFaLph8w8/hs9y9jtRno+QD+DTHQhKh+XHIoAgeWe6q3CCAN8NTDL2tWX7QzICp+McVmmHod8IjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\TrymB\\OneDrive\\advent of code\\2023 c#\\2023 c#.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\TrymB\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\TrymB\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\TrymB\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\TrymB\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Trym\\OneDrive\\advent of code\\2023 c#\\2023 c#.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
