@@ -75,14 +75,14 @@ class Day11_2 {
                 Pos p2 = galaxyLocations[j];
 
                 int xExpansion = 0;
-                for(int x = Math.Min(p1.x, p2.x); x <= Math.Max(p1.x, p2.x); x++){
+                for(int x = Math.Min(p1.x, p2.x); x < Math.Max(p1.x, p2.x); x++){
                     if(verticalExpansions.Contains(x)){
                         xExpansion += expansion;
                     }
                 }
 
                 int yExpansion = 0;
-                for(int y = Math.Min(p1.y, p2.y); y <= Math.Max(p1.y, p2.y); y++){
+                for(int y = Math.Min(p1.y, p2.y); y < Math.Max(p1.y, p2.y); y++){
                     if(horizontalExpansions.Contains(y)){
                         yExpansion += expansion;
                     }

@@ -212,14 +212,6 @@ class Day10_2 {
             return this.adjacentPipes;
         }
 
-        public Pos getPos(){
-            return this.position;
-        }
-
-        public char getType(){
-            return this.type;
-        }
-
         public (int, Pos[]) getInners(Pipe prevPipe, int side){
             int x = this.position.x;
             int y = this.position.y;
