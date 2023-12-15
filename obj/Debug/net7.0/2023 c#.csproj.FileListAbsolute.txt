@@ -26,3 +26,17 @@ C:\Users\Trym\OneDrive\advent of code\2023 c#\obj\Debug\net7.0\refint\2023 c#.dl
 C:\Users\Trym\OneDrive\advent of code\2023 c#\obj\Debug\net7.0\2023 c#.pdb
 C:\Users\Trym\OneDrive\advent of code\2023 c#\obj\Debug\net7.0\2023 c#.genruntimeconfig.cache
 C:\Users\Trym\OneDrive\advent of code\2023 c#\obj\Debug\net7.0\ref\2023 c#.dll
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\bin\Debug\net7.0\2023 c#.exe
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\bin\Debug\net7.0\2023 c#.deps.json
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\bin\Debug\net7.0\2023 c#.runtimeconfig.json
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\bin\Debug\net7.0\2023 c#.dll
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\bin\Debug\net7.0\2023 c#.pdb
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\2023 c#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\2023 c#.AssemblyInfoInputs.cache
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\2023 c#.AssemblyInfo.cs
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\2023 c#.csproj.CoreCompileInputs.cache
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\2023 c#.dll
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\refint\2023 c#.dll
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\2023 c#.pdb
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\2023 c#.genruntimeconfig.cache
+C:\Users\Trym\OneDrive\advent of code\AoC-2023-c-\obj\Debug\net7.0\ref\2023 c#.dll
