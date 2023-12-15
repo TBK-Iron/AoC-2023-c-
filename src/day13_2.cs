@@ -34,11 +34,10 @@ class Day13_2 {
         return rotatedMatrix;
     }
 
-    public static int findHorizontalMirroringIndex(char[][] pattern){
+    public static (int, int) findHorizontalMirroringIndex(char[][] pattern){
         int sum = 0;
         int y1 = 0;
-
-        int symy2 = 0;
+        int foundSymmetries = 0;
 
         for(int y2i = pattern.Length - 1; y2i > 0; y2i--){
             if(pattern[y1].SequenceEqual(pattern[y2i]) && ((y2i - y1) % 2 == 1)){
@@ -53,17 +52,15 @@ class Day13_2 {
 
                 if(foundSymmetry){
                     
-                    return y1 + (y2i - y1 - 1)/2 + 1;
-                    //symy2 = y2i;
+                    sum += y1 + (y2i - y1 - 1)/2 + 1;
+                    foundSymmetries++;
+                    break;
                 }
             }
         }
 
         int initialSum = sum;
 
-        /* if(symy2 == pattern.Length - 1){
-            return sum;
-        } */
 
 
         int y2 = pattern.Length - 1;
@@ -81,12 +78,14 @@ class Day13_2 {
                 }
 
                 if(foundSymmetry){
-                    return y1i + (y2 - y1i - 1)/2 +1;
+                    sum += y1i + (y2 - y1i - 1)/2 +1;
+                    foundSymmetries++;
+                    break;
                 }
             }
         }
 
-        return sum;
+        return (sum, foundSymmetries);
     }
 
     public static char[][] changeSmudge(char[][] pattern, int y, int x){
@@ -105,7 +104,7 @@ class Day13_2 {
     }
 
     public static void Run(){
-        List<char[][]> patterns = File.ReadAllText(@"../../../src/inputs/input13.txt").Split("\n\n")
+        List<char[][]> patterns = File.ReadAllText(@"../../../src/inputs/input13.txt").Replace("\r", "").Split("\n\n")
                                 .Select(pattern => pattern.Split("\n")
                                 .Select(line => line.ToCharArray()).ToArray()).ToList();
 
@@ -113,30 +112,52 @@ class Day13_2 {
  
         foreach(char[][] pattern in patterns){
             bool found = false;
-            int maxIndexSum = 0;
+
+            (int, int) initialMirrors1 = findHorizontalMirroringIndex(pattern);
+            initialMirrors1.Item1 *= 100;
+            (int, int) initialMirrors2 = findHorizontalMirroringIndex(rotate(pattern));
+
             for(int i = 0; i < pattern.Length; i++){
                 for(int j = 0; j < pattern[i].Length; j++){
                     char[][] tempPattern = changeSmudge(pattern, i, j);
 
-                    int index = 100 * findHorizontalMirroringIndex(tempPattern);
-                    index += findHorizontalMirroringIndex(rotate(tempPattern)); 
-                    maxIndexSum = Math.Max(maxIndexSum, index);
-                    /* if(index > 0){
-                        sum += index;
-                        found = true;
-                        break;
-                    } */
+                    (int, int) mirrors1 = findHorizontalMirroringIndex(tempPattern);
+                    mirrors1.Item1 *= 100;
+                    (int, int) mirrors2 = findHorizontalMirroringIndex(rotate(tempPattern)); 
+
+                    if(mirrors1.Item2 > 0){
+                        if(mirrors1.Item2 == 1){
+                            if(initialMirrors1.Item1 != mirrors1.Item1){
+                                sum += mirrors1.Item1;
+                                found = true;
+                                break;
+                            }
+                        } else {
+                            sum += mirrors1.Item1 - initialMirrors1.Item1;
+                            found = true;
+                            break;
+                        }
+                    } 
+                    if(mirrors2.Item2 > 0){
+                        if(mirrors2.Item2 == 1){
+                            if(initialMirrors2.Item1 != mirrors2.Item1){
+                                sum += mirrors2.Item1;
+                                found = true;
+                                break;
+                            }
+                        } else {
+                            sum += mirrors2.Item1 - initialMirrors2.Item1;
+                            found = true;
+                            break;
+                        }
+                    }
+                   
                 }
 
-                /* if(found){
+                if(found){
                     break;
-                } */
-            }
-
-            sum += maxIndexSum;
-            
-            
-            
+                }
+            }         
         }
 
         Console.WriteLine(sum);
