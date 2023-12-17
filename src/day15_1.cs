@@ -4,7 +4,7 @@ class Day15_1 {
         int result = 0;
 
         foreach(char c in input.ToCharArray()){
-            result = ((result + (int) c) * 17) % 256;
+            result = (result + c) * 17 % 256;
         }
 
         return result;

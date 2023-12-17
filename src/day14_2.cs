@@ -152,6 +152,7 @@ class Day14_2 {
     public record Pos(int x, int y);
 
     public class CharArrayComparer : IEqualityComparer<char[][]>{
+
         public bool Equals(char[][] x, char[][] y){
             if (x.Length != y.Length) return false;
             for (int i = 0; i < x.Length; i++)
