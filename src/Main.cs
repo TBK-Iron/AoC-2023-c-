@@ -1,5 +1,5 @@
 class AoC {
     static void Main(string[] args){
-        Day16_2.Run();
+        Day17_2.Run();
     }
 }

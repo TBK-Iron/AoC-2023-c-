@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.IO.Compression;
 
 class Day16_2 {
@@ -140,12 +141,15 @@ class Day16_2 {
     }
 
     public static void Run(){
+        
         Thread myThread = new Thread(new ThreadStart(runCode), 1024*1024*10);
         myThread.Start();
+
     }
 
     private static void runCode(){
-
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
         
         char[][] contraptionLayout = File.ReadAllLines(@"../../../src/inputs/input16.txt").Select(line => line.ToCharArray()).ToArray();
 
@@ -169,10 +173,7 @@ class Day16_2 {
         
 
         for(int i = 0; i < startingBeams.Count; i++){
-            //memoization = new Dictionary<(Pos, int, int), HashSet<Pos>>();
             energizedPositions[i] = energizedPositionsFromBeam(startingBeams[i], contraptionLayout, new HashSet<(Pos, int, int)>{}, 0);
-
-            Console.WriteLine(i + ": " + energizedPositions[i].Count);
 
             if(energizedPositions[i].Count > bestEnergizedTilesCount){
                 bestEnergizedTilesCount = energizedPositions[i].Count;
@@ -182,20 +183,9 @@ class Day16_2 {
 
         }
 
-        /* char[][] resultLayout = new char[contraptionLayout.Length][];
-        for(int i = 0; i < contraptionLayout.Length; i++){
-            resultLayout[i] = Enumerable.Repeat('.', contraptionLayout[i].Length).ToArray();
-        }
-
-        foreach(Pos pos in energizedPositions[7]){
-            resultLayout[pos.y][pos.x] = '#';
-        }
-
-        foreach(char[] line in resultLayout){
-            Console.WriteLine(string.Join("", line));
-        } */
-
-        Console.WriteLine(bestEnergizedTilesCount);
+        stopwatch.Stop();
+        Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
+        Console.WriteLine($"Result: {bestEnergizedTilesCount}");
 
     }
 
