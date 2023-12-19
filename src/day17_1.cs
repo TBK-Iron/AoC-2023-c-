@@ -117,7 +117,7 @@ class Day17_1 {
                         
                         
                 } else if(sameDirectionMovements[(currentPos, currentRank, currentDir)].Last().Count < 3){
-                    if(!visited.Contains((adjPos,currentRank,currentDir))){
+                    if(!visited.Contains((adjPos,currentRank + 1,currentDir))){
                         if(distances[(adjPos, currentRank + 1, newDir)] > newDist){
                             distances[(adjPos, currentRank + 1, newDir)] = newDist;
                             sameDirectionMovements[(adjPos, currentRank + 1, newDir)] = deepCopy(sameDirectionMovements[(currentPos, currentRank, newDir)]);
